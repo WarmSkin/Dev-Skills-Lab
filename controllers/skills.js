@@ -11,8 +11,26 @@ function index (req, res) {
         console.log(error)
         res.redirect('/')
     })
-  }
+}
+
+function newSkill(req, res) {
+    res.render('skills/new')
+}
+
+function create(req, res) {
+    req.body.learned = false
+    Skill.create(req.body)
+    .then(skill => {
+        res.redirect('/skills')
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect('/')
+    })
+}
 
 export {
-    index
+    index,
+    newSkill as new,
+    create,
 }
