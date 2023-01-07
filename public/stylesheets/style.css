@@ -11,10 +11,6 @@ li {
   list-style: none;
 }
 
-.delete-form {
-  display: inline-block;
-}
-
-.delete-form button {
+.delete-form a {
   color: red;
 }

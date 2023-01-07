@@ -12,13 +12,6 @@
     <ul>
       <% skills.forEach(skill => { %>
         <li>
-          <form
-            action="/skills/<%= skill._id %>?_method=DELETE"
-            class="delete-form"
-            method="POST"
-          >
-            <button type="submit"> X </button>
-          </form>
             <a href="/skills/<%= skill.id %>"><%= skill.text %></a> 
             - 
             <%= skill.learned ? 'learned' : 'not learned' %>

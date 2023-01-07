@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>A Dev Skill</title>
 </head>
 <body>
     <h1>Skill</h1>
     <h2> <%= skill.text %> </h2>
     <p> Obtained: <%= skill.learned ? "Yes" : "No" %></p>
+    <form
+        action="/skills/<%= skill._id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+    >
+        <a href="" onclick="this.closest('form').submit();return false;">Delete Skill</a>
+    </form>
     <a href="/skills">Go back</a>
 </body>
 </html>
