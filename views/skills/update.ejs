@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Update Skill</title>
+</head>
+<body>
+    <h1>Update SKill</h1>
+    <form 
+        action="/skills/<%= skill._id %>?_method=PATCH"
+        class="update-form"
+        method="POST"
+        autocomplete="off"
+    >
+    <input type="text" name="text" value="<%= skill.text %>">
+    <input type="checkbox" name="learned" <%= skill.learned ? 'checked' : '' %>>
+    <button type="submit">Update Skill</button>
+    </form>
+</body>
+</html>
